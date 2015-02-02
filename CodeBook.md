@@ -2,16 +2,17 @@
 This code book is to describe 
 
 #1/ Data Files
-| File Name | Available Formats |
-| tourney_compact_results.csv | (56.27 kb) |
-| seasons.csv | (1.39 kb) |
-| teams.csv | (5.82 kb) |
-| tourney_detailed_results.csv | (76.51 kb)|
-| tourney_slots.csv | (37.42 kb) |
-| tourney_seeds.csv | (28.57 kb) |
-| regular_season_detailed_results.csv | (5.76 mb) |
-| regular_season_compact_results.csv | (3.76 mb) |
-| sample_submission.csv | (177.98 kb) |
+| File Name | Available Formats |  
+| :-------: | :---------------: |  
+| tourney_compact_results.csv | (56.27 kb) |  
+| seasons.csv | (1.39 kb) |  
+| teams.csv | (5.82 kb) |  
+| tourney_detailed_results.csv | (76.51 kb)|  
+| tourney_slots.csv | (37.42 kb) |  
+| tourney_seeds.csv | (28.57 kb) |  
+| regular_season_detailed_results.csv | (5.76 mb) |  
+| regular_season_compact_results.csv | (3.76 mb) |  
+| sample_submission.csv | (177.98 kb) |  
 
 #2/ the variables
 
