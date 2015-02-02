@@ -23,10 +23,10 @@ In both stages, the sample submission will tell you which games to predict.
 
 
 # <i class="icon-pencil"></i> File descriptions:
-Below we describe the format and fields of the "essential" data files. 
-Optional files may be added to the data while the competition is running. 
-You can assume that we will provide the essential files for the current season. 
-You should not assume that we will provide optional files for the current season. 
+Below we describe the format and fields of the "essential" data files.  
+Optional files may be added to the data while the competition is running.  
+You can assume that we will provide the essential files for the current season.  
+You should not assume that we will provide optional files for the current season.  
 To avoid confusion, we will keep the current season data (for **stage 2**) separate from the historical data (**stage 1**).
  
 # <i class="icon-file"></i> **teams.csv** This file identifies the different college teams present in the dataset.
