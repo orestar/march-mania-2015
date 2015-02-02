@@ -1,43 +1,52 @@
 
+This code book is to describe 
+###1/ the data
+###2/ the variables
+###3/ the transformations 
 
-
-Variables
-Transformation
-
+###Context :
 
 If you are unfamiliar with the format and intricacies of the NCAA tournament, we encourage reading the wikipedia page before diving into the data.  The data description and schema may seem daunting at first, but is not as complicated as it appears.
-As a reminder, you are encouraged to incorporate your own sources of data. We have provided team-level historical data to jump-start the modeling process, but there is also player-level and game-level data that may be useful.
- 
-If you're looking for some powerful technology to help get the most from all your data, you could load your data into the Vertica Analytics Platform for data preparation and use Distributed R, a scaleable and high-performance platform for R with out-of-the-box parallel algorithms. After you build and evaluate predictive model in Distributed R you can even deploy model(s) back to Vertica Analytics Platform for in-database prediction scoring using simple SQL and can combine prediction results with other insights that you may have derived from the data. Note that Vertica Analytics Platform offers wide array of SQL analytic functions such as in-database sentiment analysis functions, geospatial functions that can help you derive new and interesting attributes.
- 
-We extend our gratitude to Kenneth Massey for his work gathering and providing much of the historical data.
- 
+
+As a reminder, you are encouraged to incorporate your own sources of data.
+We have provided team-level historical data to jump-start the modeling process, but there is also player-level and game-level data that may be useful.
+
+If you're looking for some powerful technology to help get the most from all your data, you could load your data into the Vertica Analytics Platform for data preparation and use Distributed R, a scaleable and high-performance platform for R with out-of-the-box parallel algorithms.
+After you build and evaluate predictive model in Distributed R you can even deploy models back to Vertica Analytics Platform for in-database prediction scoring using simple SQL and can combine prediction results with other insights that you may have derived from the data.
+Note that Vertica Analytics Platform offers wide array of SQL analytic functions such as in-database sentiment analysis functions, geospatial functions that can help you derive new and interesting attributes.
+
 What to predict
  
-Stage 1 - You should submit predicted probabilities for every possible matchup in the past 4 NCAA tournaments (2011-2014).
+> - **Stage 1** - You should submit predicted probabilities for every possible matchup in the past 4 NCAA tournaments (2011-2014).
  
-Stage 2 - You should submit predicted probabilities for every possible matchup before the 2015 tournament begins.
- 
-Refer to the Timeline page for specific dates. In both stages, the sample submission will tell you which games to predict.
+> - **Stage 2** - You should submit predicted probabilities for every possible matchup before the 2015 tournament begins.
+
+```sequence
+A->B: Hello B?
+Note right of Bob: Bob thinks
+B-->: I am!
+```
+
+
+Refer to the Timeline page for specific dates.
+In both stages, the sample submission will tell you which games to predict.
  
 File descriptions
+Below we describe the format and fields of the "essential" data files.
+Optional files may be added to the data while the competition is running.
+You can assume that we will provide the essential files for the current season.
+You should not assume that we will provide optional files for the current season.
+To avoid confusion, we will keep the current season data (for stage 2) separate from the historical data (stage 1).
  
-Below we describe the format and fields of the "essential" data files. Optional files may be added to the data while the competition is running. You can assume that we will provide the essential files for the current season. You should not assume that we will provide optional files for the current season. To avoid confusion, we will keep the current season data (for stage 2) separate from the historical data (stage 1).
- 
-teams.csv
- 
-This file identifies the different college teams present in the dataset. Each team has a 4 digit id number.
- 
-seasons.csv
- 
-This file identifies the different seasons included in the historical data, along with certain season-level properties.
+**teams.csv** This file identifies the different college teams present in the dataset. Each team has a 4 digit id number.
+**seasons.csv** This file identifies the different seasons included in the historical data, along with certain season-level properties.
  •"season" - indicates the year in which the tournament was played
  •"dayzero" - tells you the date corresponding to daynum=0 during that season. All game dates have been aligned upon a common scale so that the championship game of the final tournament is on daynum=154. Working backward, the national semifinals are always on daynum=152, the "play-in" games are on days 134/135, Selection Sunday is on day 132, and so on. All game data includes the day number in order to make it easier to perform date calculations. If you really want to know the exact date a game was played on, you can combine the game's "daynum" with the season's "dayzero". For instance, since day zero during the 2011-2012 season was 10/31/2011, if we know that the earliest regular season games that year were played on daynum=7, they were therefore played on 11/07/2011.
  •"regionW/X/Y/Z" - by convention, the four regions in the final tournament are always named W, X, Y, and Z. Whichever region's name comes first alphabetically, that region will be Region W. And whichever Region plays against Region W in the national semifinals, that will be Region X. For the other two regions, whichever region's name comes first alphabetically, that region will be Region Y, and the other will be Region Z. This allows us to identify the regions and brackets in a standardized way in other files. For instance, during the 2012 tournament, the four regions were East, Midwest, South, and West. Being the first alphabetically, East becomes W. Since the East regional champion (Ohio State) played against the Midwest regional champion (Kansas) in the national semifinals, that makes Midwest be region X. For the other two (South and West), since South comes first alphabetically, that makes South Y and therefore West is Z. So for this season, the W/X/Y/Z are East,Midwest,South,West.
  
-regular_season_compact_results.csv
- 
-This file identifies the game-by-game results for 30 seasons of historical data, from 1985 to 2014. Each year, it includes all games played from daynum 0 through 132 (which by definition is "Selection Sunday", the day that tournament pairings are announced). Each row in the file represents a single game played.
+**regular_season_compact_results.csv**
+This file identifies the game-by-game results for 30 seasons of historical data, from 1985 to 2014.
+Each year, it includes all games played from daynum 0 through 132 (which by definition is "Selection Sunday", the day that tournament pairings are announced). Each row in the file represents a single game played.
  •"season" - this is the year of the associated entry in seasons.csv (the year in which the final tournament occurs)
  •"daynum" - this integer always ranges from 0 to 132, and tells you what day the game was played on. It represents an offset from the "dayzero" date in the "seasons.csv" file. For example, the first game in the file was daynum=20. Combined with the fact from the "season.csv" file that day zero was 10/29/1984, that means the first game was played 20 days later, or 11/18/1984. There are no teams that ever played more than one game on a given date, so you can use this fact if you need a unique key. In order to accomplish this uniqueness, we had to adjust one game's date. In March 2008, the SEC postseason tournament had to reschedule one game (Georgia-Kentucky) to a subsequent day, so Georgia had to actually play two games on the same day. In order to enforce this uniqueness, we moved the game date for the Georgia-Kentucky game back to its original date.
  •"wteam" - this identifies the id number of the team that won the game, as listed in the "teams.csv" file. No matter whether the game was won by the home team or visiting team, "wteam" always identifies the winning team.
