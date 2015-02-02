@@ -28,7 +28,8 @@ As a reminder, you are encouraged to **incorporate your own sources of data**.
 We have provided team-level historical data to jump-start the modeling process, but there is also player-level and game-level data that may be useful.  
 If you want, you could load your data into the Vertica Analytics Platform 
 
-** What to predict **
+** What to predict **  
+
 > - **Stage 1** - You should submit predicted probabilities for every possible matchup in the past 4 NCAA tournaments (2011-2014).
  
 > - **Stage 2** - You should submit predicted probabilities for every possible matchup before the 2015 tournament begins.
@@ -52,16 +53,16 @@ This file identifies the different seasons included in the historical data, alon
  •"dayzero" - tells you the date corresponding to daynum=0 during that season.  
 All game dates have been aligned upon a common scale so that the championship game of the final tournament is on daynum=154.  
 Working backward,  
-**national semifinals** are always on daynum=152,  
-**"play-in" games** are on days 134/135,  
-**Selection Sunday** is on day 132, and so on.  
+**national semifinals** are always on **daynum=152**,  
+**"play-in" games** are on days **134/135**,  
+**Selection Sunday** is on day **132**, and so on.  
 All game data includes the day number in order to make it easier to perform date calculations.  
 If you really want to know the exact date a game was played on, you can combine the game's **"daynum"** with the season's **"dayzero"**.  
 For instance, since day zero during the 2011-2012 season was **10/31/2011**, if we know that the earliest regular season games that year were played on **daynum=7**, they were therefore played on **11/07/2011**.  
- •"region W/X/Y/Z" - by convention, the four regions in the final tournament are always named W, X, Y, and Z.
+ •"region W/X/Y/Z" - by convention, the four regions in the final tournament are always named **W**, **X**, **Y**, and **Z**.
 Whichever region's name comes first alphabetically, that region will be Region W.  
-And whichever Region plays against Region W in the **national semifinals**, that will be Region X.  
-For the other two regions, whichever region's name comes first alphabetically, that region will be Region Y, and the other will be Region Z.  
+And whichever Region plays against Region **W** in the **national semifinals**, that will be Region **X**.  
+For the other two regions, whichever region's name comes first alphabetically, that region will be Region **Y**, and the other will be Region **Z**.  
 This allows us to identify the regions and brackets in a standardized way in other files.  
 For instance, during the 2012 tournament, the four regions were East, Midwest, South, and West.  
 Being the first alphabetically, **East** becomes **W**.  
