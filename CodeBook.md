@@ -1,5 +1,5 @@
 
-This code book is to describe 
+This code book describes :
 
 #1/ Data Files
 | File Name | Available Formats |  
@@ -13,28 +13,29 @@ This code book is to describe
 | regular_season_detailed_results.csv | (5.76 mb) |  
 | regular_season_compact_results.csv | (3.76 mb) |  
 | sample_submission.csv | (177.98 kb) |  
+| own sources of data | (000 kb) |  
 
-#2/ the variables
+#2/ Variables
 
-#3/ the transformations 
 
-#Context :
+#3/ Transformations 
 
-If you are unfamiliar with the format and intricacies of the NCAA tournament, we encourage reading the wikipedia page before diving into the data.  
+
+# Context :
+
 The data description and schema may seem daunting at first, but is not as complicated as it appears.  
-As a reminder, you are encouraged to incorporate your own sources of data.  
+As a reminder, you are encouraged to **incorporate your own sources of data**.  
 We have provided team-level historical data to jump-start the modeling process, but there is also player-level and game-level data that may be useful.  
 If you want, you could load your data into the Vertica Analytics Platform 
 
-What to predict
+> ** What to predict **
 > - **Stage 1** - You should submit predicted probabilities for every possible matchup in the past 4 NCAA tournaments (2011-2014).
  
 > - **Stage 2** - You should submit predicted probabilities for every possible matchup before the 2015 tournament begins.
 
 Refer to the Timeline page for specific dates.  
 In both stages, the sample submission will tell you which games to predict.
-
-
+<i class="icon-folder-open"></i>
 # <i class="icon-pencil"></i> File descriptions:  
 Below we describe the format and fields of the "essential" data files.  
 Optional files may be added to the data while the competition is running.  
