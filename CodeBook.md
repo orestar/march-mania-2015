@@ -29,9 +29,11 @@ You can assume that we will provide the essential files for the current season.
 You should not assume that we will provide optional files for the current season.  
 To avoid confusion, we will keep the current season data (for **stage 2**) separate from the historical data (**stage 1**).
  
-# <i class="icon-file"></i> **teams.csv** This file identifies the different college teams present in the dataset.
+# <i class="icon-file"></i> **teams.csv**  
+This file identifies the different college teams present in the dataset.
 Each team has a 4 digit id number.  
-# <i class="icon-file"></i> **seasons.csv** This file identifies the different seasons included in the historical data, along with certain season-level properties.  
+# <i class="icon-file"></i> **seasons.csv**  
+This file identifies the different seasons included in the historical data, along with certain season-level properties.  
  •"season" - indicates the year in which the tournament was played  
  •"dayzero" - tells you the date corresponding to daynum=0 during that season.  
 All game dates have been aligned upon a common scale so that the championship game of the final tournament is on daynum=154.  
@@ -54,7 +56,7 @@ For the other two (South and West), since South comes first alphabetically, that
 So for this season, the **W/X/Y/Z are East,Midwest,South,West**.
 
 
-# <i class="icon-file"></i> **regular_season_compact_results.csv**
+# <i class="icon-file"></i> **regular_season_compact_results.csv**  
 This file identifies the game-by-game results for 30 seasons of historical data, from **1985 to 2014**.  
 Each year, it includes all games played from daynum 0 through 132 (which by definition is "Selection Sunday", the day that tournament pairings are announced).  
 Each row in the file represents a single game played.  
