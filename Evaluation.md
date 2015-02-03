@@ -5,10 +5,10 @@ Submissions are scored on the log loss, also called the predictive binomial devi
 **LogLoss=−1n ∑ i=1 n [y i log(y ^  i )+(1−y i )log(1−y ^  i )]**
 
 where
- •n is the **number of games played**
- •y ^  i   is the **predicted probability of team 1 beating team 2**
- •y i   is **1** if team 1 wins, **0** if team 2 wins
- •log()  is the natural (base e) logarithm
+n is the **number of games played**
+y ^  i   is the **predicted probability of team 1 beating team 2**
+y i   is **1** if team 1 wins, **0** if team 2 wins
+log()  is the natural (base e) logarithm
  
 A smaller log loss is better.  
 Games which are not played are ignored in the scoring.  
