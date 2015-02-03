@@ -21,6 +21,7 @@ In order to prevent this, predictions are bounded away from the extremes by a sm
 # Submission File
  
 The file you submit will depend on whether the competition is in  
+
 **stage 1** (historical model building) or  
 **stage 2** (the 2015 tournament).  
 
