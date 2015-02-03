@@ -44,10 +44,10 @@ You can assume that we will provide the essential files for the current season.
 You should not assume that we will provide optional files for the current season.  
 To avoid confusion, we will keep the current season data (for **stage 2**) separate from the historical data (**stage 1**).
  
-# **teams.csv**  
+# teams.csv  
 This file identifies the different college teams present in the dataset.
 Each team has a 4 digit id number.  
-# **seasons.csv**  
+# seasons.csv  
 This file identifies the different seasons included in the historical data, along with certain season-level properties.  
  •"season" - indicates the year in which the tournament was played  
  •"dayzero" - tells you the date corresponding to daynum=0 during that season.  
@@ -71,7 +71,7 @@ For the other two (South and West), since **South** comes first alphabetically, 
 So for this season, the **W/X/Y/Z are East,Midwest,South,West**.
 
 
-# **regular_season_compact_results.csv**  
+# regular_season_compact_results.csv  
 This file identifies the game-by-game results for 30 seasons of historical data, from **1985 to 2014**.  
 Each year, it includes all games played from daynum 0 through 132 (which by definition is "Selection Sunday", the day that tournament pairings are announced).  
 Each row in the file represents a single game played.  
@@ -96,7 +96,7 @@ If the winning team was the visiting team, this value will be "A".
 If it was played on a neutral court, then this value will be "N".  
 Sometimes it is unclear whether the site should be considered neutral, since it is near one team's home court, or even on their court during a tournament, but for this determination we have simply used the Kenneth Massey data in its current state, where the "@" sign is either listed with the winning team, the losing team, or neither team.  
  
-# **regular_season_detailed_results.csv**
+# regular_season_detailed_results.csv
 This file is a more detailed set of game results, covering seasons 2003-2014.  
 This includes team-level total statistics for each game (total field goals attempted, offensive rebounds, etc.)  
 The column names should be self-explanatory to basketball fans (as above, "w" or "l" refers to the winning or losing team):  
@@ -114,13 +114,15 @@ The column names should be self-explanatory to basketball fans (as above, "w" or
  •wblk - blocks
  •wpf - personal fouls
  
-# **tourney_compact_results.csv**  
+# tourney_compact_results.csv  
 This file identifies the game-by-game NCAA tournament results for all seasons of historical data.  
 The data is formatted exactly like the **regular_season_compact_results.csv** data.  
 Note that these games also include the play-in games (which always occurred on day 134/135) for those years that had play-in games.  
-# **tourney_detailed_results.csv**  
+
+# tourney_detailed_results.csv  
 This file contains the more detailed results for tournament games from 2003 onward.  
-# **tourney_seeds.csv**  
+
+# tourney_seeds.csv  
 This file identifies the seeds for all teams in each NCAA tournament, for all seasons of historical data.  
 Thus, there are between 64-68 rows for each year, depending on the bracket structure.  
  •"season" - the year  
@@ -129,8 +131,9 @@ For play-in teams, there is a fourth character (a or b) to further distinguish t
 For example, the first record in the file is seed W01, which means we are looking at the #1 seed in the W region (which we can see from the "**seasons.csv**" file was the East region).  
 This seed is also referenced in the "**tourney_slots.csv**" file that tells us which bracket slots face which other bracket slots in which rounds.  
  •"team" - this identifies the id number of the team, as specified in the **teams.csv** file  
-# **tourney_slots.csv**  
-This file identifies the mechanism by which teams are paired against each other, depending upon their seeds.  
+
+# tourney_slots.csv  
+This file identifies the mechanism by which **teams are paired against each other**, depending upon their seeds.  
 Because of the existence of play-in games for particular seed numbers, the pairings have small differences from year to year.  
 If there were N teams in the tournament during a particular year, there were N-1 teams eliminated (leaving one champion) and therefore N-1 games played, as well as N-1 slots in the tournament bracket, and thus there will be N-1 records in this file for that season.  
  •"season" - the year  
