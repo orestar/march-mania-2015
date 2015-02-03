@@ -2,7 +2,7 @@
 
 Submissions are scored on the log loss, also called the predictive binomial deviance:
  
-#LogLoss=−1n ∑ i=1 n [y i log(y ^  i )+(1−y i )log(1−y ^  i )], 
+**LogLoss=−1n ∑ i=1 n [y i log(y ^  i )+(1−y i )log(1−y ^  i )]**
 
 where
  •n is the **number of games played**
@@ -32,4 +32,8 @@ For example, **"2013_1104_1129"** indicates team 1104 played team 1129 in the ye
 You must predict the probability that the team with the lower id beats the team with the higher id.
  
 The resulting submission format looks like the following, where "pred" represents the predicted probability that the **first team** will win:
-** id,pred2011_1103_1106,0.52011_1103_1112,0.52011_1103_1114,0.5......**
+ id,pred  
+ 2011_1103_1106,0.5  
+ 2011_1103_1112,0.5  
+ 2011_1103_1114,0.5  
+ ......  
