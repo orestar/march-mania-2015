@@ -17,9 +17,7 @@ This code book describes :
 
 #2/ Variables
 
-
 #3/ Transformations 
-
 
 # Context :
 
@@ -123,6 +121,7 @@ Note that these games also include the play-in games (which always occurred on d
 This file contains the more detailed results for tournament games from 2003 onward.  
 
 # tourney_seeds.csv  
+*NB :Assuming it is the official NCAAseed list*
 This file identifies the seeds for all teams in each NCAA tournament, for all seasons of historical data.  
 Thus, there are between 64-68 rows for each year, depending on the bracket structure.  
  •"season" - the year  
@@ -135,20 +134,29 @@ This seed is also referenced in the "**tourney_slots.csv**" file that tells us w
 # tourney_slots.csv  
 This file identifies the mechanism by which **teams are paired against each other**, depending upon their seeds.  
 Because of the existence of play-in games for particular seed numbers, the pairings have small differences from year to year.  
+
 If there were N teams in the tournament during a particular year, there were N-1 teams eliminated (leaving one champion) and therefore N-1 games played, as well as N-1 slots in the tournament bracket, and thus there will be N-1 records in this file for that season.  
+
  •"season" - the year  
+ 
  •"slot" - this uniquely identifies one of the tournament games.  
-For play-in games, it is a three-character string identifying the seed fulfilled by the winning team, such as W16 or Z13.  
-For regular tournament games, it is a four-character string, where the first two characters tell you which round the game is (R1, R2, R3, R4, R5, or R6) and the second two characters tell you the expected seed of the favored team.
-Thus the first row is R1W1, identifying the Round 1 game played in the W bracket, where the favored team is the 1 seed.  
-As a further example, the R2W1 slot indicates the Round 2 game that would have the 1 seed from the W bracket, assuming that all favored teams have won up to that point.  
-The slot names are different for the final two rounds, where R5WX identifies the national semifinal game between the winners of regions W and X, and R5YZ identifies the national semifinal game between the winners of regions Y and Z, and R6CH identifies the championship game.  
+
+For **play-in games** or **Opening Round game** , it is a three-character string identifying the seed fulfilled by the winning team, such as **W16** or **Z13**.  
+
+On April 22, 2010, the NCAA announced that the tournament would expand to 68 teams, with four **"Play-In Games"** beginning with the 2011 tournament.  
+Consequently, the uniqueness of the single, opening round game lasted from **2001–2010**.  
+Game played between **two of the lowest-seeded teams** to qualify for an automatic bid to the tournament
+
+For regular tournament games, it is a four-character string, where the first two characters tell you which round the game is (R1, R2, R3, R4, R5, or R6) and the second two characters tell you the expected seed of the favored team.  
+Thus the first row is R1W1, identifying the Round 1 game played in the **W** bracket, where the favored team is the 1 seed.  
+As a further example, the R2W1 slot indicates the Round 2 game that would have the 1 seed from the **W** bracket, assuming that all favored teams have won up to that point.  
+The slot names are different for the final two rounds, where **R5WX** identifies the national semifinal game between the winners of regions **W** and **X**, and **R5YZ** identifies the national semifinal game between the winners of regions **Y** and **Z**, and **R6CH** identifies the championship game.  
 The "slot" value is used in other columns in order to represent the advancement and pairings of winners of previous games.  
  •"strongseed" - this indicates the expected stronger-seeded team that plays in this game.  
 For Round 1 games, a team seed is identified in this column (as listed in the "seed" column in the **tourney_seeds.csv** file), whereas for subsequent games, a slot is identified in this column.  
-In the first record of this file (slot R1W1), we see that seed W01 is the "strongseed", which during the 1985 tournament would have been Georgetown.  
+In the first record of this file (slot **R1W1**), we see that seed **W01** is the "strongseed", which during the 1985 tournament would have been **Georgetown**.  
 Whereas for games from Round 2 or later, rather than a team seed, we will see a "slot" referenced in this column.
-So in the 33rd record of this file (slot R2W1), it tells us that the winners of slots R1W1 and R1W8 will face each other in Round 2.  
+So in the 33rd record of this file (slot **R2W1**), it tells us that the winners of slots **R1W1** and **R1W8** will face each other in Round 2.  
 Of course, in the last few games of the tournament - the national semifinals and finals - it's not really meaningful to talk about a "strong seed" or "weak seed", but those games are represented in the same format for the sake of uniformity.  
  •"weakseed" - this indicates the expected weaker-seeded team that plays in this game, assuming all favored teams have won so far.  
 For Round 1 games, a team seed is identified in this column (as listed in the "seed" column in the **tourney_seeds.csv** file), whereas for subsequent games, a slot is identified in this column.  
