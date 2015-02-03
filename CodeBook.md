@@ -37,7 +37,7 @@ If you want, you could load your data into the Vertica Analytics Platform
 Refer to the Timeline page for specific dates.  
 In both stages, the sample submission will tell you which games to predict.
 
-# **File descriptions: **  
+# File descriptions:    
 Below we describe the format and fields of the "essential" data files.  
 Optional files may be added to the data while the competition is running.  
 You can assume that we will provide the essential files for the current season.  
