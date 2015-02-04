@@ -33,7 +33,7 @@ Since team1 vs. team2 is the same as team2 vs. team1, we only include the game p
 For example, in a tournament of 68 teams (64 + 4 play-in teams), you will predict (68x67)/2  = **2278 matchups**. 
  
 Each game has a unique id created by **concatenating** the season in which the game was played, the team1 id, and the team2 id.  
-For example, **"2013_1104_1129"** indicates team 1104 played team 1129 in the year 2013.  
+For example, **"2013_1104_1129"** indicates team **1104** played team **1129** in the year **2013**.  
 
 You must predict the probability that the team with the lower id beats the team with the higher id.
  
