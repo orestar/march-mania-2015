@@ -26,7 +26,7 @@ As a reminder, you are encouraged to **incorporate your own sources of data**.
 We have provided team-level historical data to jump-start the modeling process, but there is also player-level and game-level data that may be useful.  
 If you want, you could load your data into the Vertica Analytics Platform 
 
-** What to predict **  
+# What to predict
 
 > - **Stage 1** - You should submit predicted probabilities for every possible matchup in the past 4 NCAA tournaments (2011-2014).
  
