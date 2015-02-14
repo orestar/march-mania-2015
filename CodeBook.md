@@ -73,8 +73,8 @@ So for this season, the **W/X/Y/Z are East,Midwest,South,West**.
 This file identifies the game-by-game results for 30 seasons of historical data, from **1985 to 2014**.  
 Each year, it includes all games played from daynum 0 through 132 (which by definition is "Selection Sunday", the day that tournament pairings are announced).  
 Each row in the file represents a single game played.  
- •"season" - this is the year of the associated entry in **seasons.csv** (the year in which the final tournament occurs)  
- •"daynum" - this integer always ranges from 0 to 132, and tells you what day the game was played on.  
+"**season**" - this is the year of the associated entry in **seasons.csv** (the year in which the final tournament occurs)  
+"**daynum**" - this integer always ranges from 0 to 132, and tells you what day the game was played on.  
 It represents an offset from the "dayzero" date in the "seasons.csv" file.  
 For example, the first game in the file was daynum=20.  
 Combined with the fact from the "season.csv" file that day zero was 10/29/1984, that means the first game was played 20 days later, or 11/18/1984.  
